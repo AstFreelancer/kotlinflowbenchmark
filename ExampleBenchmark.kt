@@ -47,6 +47,13 @@ class WordRepository(private val dao: WordDao) {
     fun countByRepNum(repNum: Int): Flow<Int> = dao.countByRepNum(repNum)
 }
 
+// > Task :benchmark:connectedReleaseAndroidTest
+// Starting 2 tests on SM-A235F - 13
+// SM-A235F - 13 Tests 0/2 completed. (0 skipped) (0 failed)
+// 5,871,284   ns        1064 allocs    Trace    Method Trace    FlowVsSuspendBenchmark.benchmarkSuspend
+// SM-A235F - 13 Tests 1/2 completed. (0 skipped) (0 failed)
+// 12,101,146   ns        1279 allocs    Trace    Method Trace    FlowVsSuspendBenchmark.benchmarkFlow
+// Finished 2 tests on SM-A235F - 13
 @RunWith(AndroidJUnit4::class)
 class FlowVsSuspendBenchmark {
 
